@@ -1,0 +1,7 @@
+https://scrapeops.io/python-scrapy-playbook/scrapy-403-unhandled-forbidden-error/
+https://www.zenrows.com/blog/scrapy-403#easy-solution
+https://stackoverflow.com/questions/76512482/scrapy-selenium-error-typeerror-webdriver-init-got-an-unexpected-keyword
+https://github.com/clemfromspace/scrapy-selenium/issues/128
+https://www.zenrows.com/blog/scrapy-pagination#getting-blocked-when-scraping-multiple-pages-with-scrapy
+https://scrapeops.io/python-scrapy-playbook/scrapy-pagination-guide/
+https://www.youtube.com/watch?v=MaPyt6dpnVY&t=976s

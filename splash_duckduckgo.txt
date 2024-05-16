@@ -1,0 +1,34 @@
+function main(splash, args)
+  --splash:set_user_agent("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36")
+  --[[
+  headers = {
+    ['User-Agent'] = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+  }
+  splash:set_custom_headers(headers)
+  --]]
+  splash:on_request(function(request)
+      request: set_header('User-Agent', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36')
+  end)
+  assert(splash:go(args.url))
+  assert(splash:wait(1))
+  
+  input_box = assert(splash:select("input[id='searchbox_input']"))
+  input_box:focus()
+  input_box:send_text("mysql")
+  assert(splash:wait(1))
+  
+  --[[
+  btn = assert(splash:select("button[class ^='searchbox_searchButton']"))
+  btn:mouse_click()
+  assert(splash:wait(5))
+  --]]
+  
+  input_box:send_keys("<Enter>")
+  assert(splash:wait(5))
+  splash:set_viewport_full()
+  
+  return {
+    html = splash:html(),
+    png = splash:png()
+  }
+end
